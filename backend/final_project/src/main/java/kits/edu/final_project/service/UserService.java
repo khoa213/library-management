@@ -4,12 +4,15 @@ package kits.edu.final_project.service;
 import kits.edu.final_project.entity.UserEntity;
 import kits.edu.final_project.exception.CustomException;
 import kits.edu.final_project.payload.request.SignupRequest;
+import kits.edu.final_project.payload.response.UserResponse;
 import kits.edu.final_project.repository.UserRepository;
 import kits.edu.final_project.service.imp.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -36,8 +39,32 @@ return isSuccess;
     }
 
     @Override
-    public List<UserEntity> getAllUser() {
-        return userRepository.findAllUser();
+    public List<UserResponse> getAllUsers() {
+//        return userRepository.findAll();
+        List<UserEntity> list=userRepository.findAll();
+        List<UserResponse> responseList=new ArrayList<>();
+        try {
+//            UserEntity user = new UserEntity();
+            for(UserEntity u:list){
+                UserResponse userResponse=new UserResponse();
+                userResponse.setEmail(u.getEmail());
+                userResponse.setId(u.getId());
+                userResponse.setUsername(u.getUsername());
+
+                responseList.add(userResponse);
+            }
+        }catch (Exception e)
+        {
+            throw new CustomException("Loi get List users"+e.getMessage());
+        }
+        return responseList;
+    }
+
+    @Override
+    public UserEntity addNewUser( UserEntity userEntity) {
+
+        return userRepository.save(userEntity);
+
     }
 
 
