@@ -42,10 +42,12 @@ public class UserController {
         response.setData(userServiceImp.addNewUser(userEntity));
         return new ResponseEntity<>(response,HttpStatus.OK);
     }
-//    @PutMapping("/{id}")
-//    public ResponseEntity<?> getUserById(@RequestBody UserEntity userEntity,@PathVariable int id) {
-//        BaseResponse response = new BaseResponse();
-//        response.setStatusCode(200);
-//        response.setData();
-//    }
+    @PutMapping("/change/{id}")
+    public ResponseEntity<?> getUserById(@RequestBody UserEntity userEntity,@PathVariable int id) {
+        BaseResponse response = new BaseResponse();
+        response.setStatusCode(200);
+        response.setData(userServiceImp.replaceUserById(userEntity,id));
+        return new ResponseEntity<>(response,HttpStatus.OK);
+    }
+
 }

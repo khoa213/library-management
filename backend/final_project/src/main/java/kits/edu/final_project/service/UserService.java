@@ -67,5 +67,23 @@ return isSuccess;
 
     }
 
+    @Override
+    public UserEntity replaceUserById(UserEntity userEntity, int id) {
+        return userRepository.findById(id).map(u->{
+            u.setUsername(userEntity.getUsername());
+            u.setFirstname(userEntity.getFirstname());
+            u.setLastname(userEntity.getLastname());
+            u.setPassword(userEntity.getPassword());
+            u.setImage(userEntity.getImage());
+            u.setEmail(userEntity.getEmail());
+            u.setGender(userEntity.getGender());
+            return userRepository.save(u);
+        })
+                .orElseGet(()->{
+                    return userRepository.save(userEntity);
+                });
+//        return null;
+    }
+
 
 }
