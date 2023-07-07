@@ -85,5 +85,21 @@ return isSuccess;
 //        return null;
     }
 
+    @Override
+    public List<UserEntity> deleteUserById(int id) {
+//          List<UserEntity> users = userRepository.findAll();
+//          List<UserEntity> u = new ArrayList<>();
+//          for (UserEntity user:users) {
+//                if (user.getId()!=id) {
+//                    u.add(user);
+//                }
+//          }
+//          users=u;
+//          return users;
+////        return userRepository.findById(id).stream().reduce();
+        userRepository.deleteById(id);
+        return userRepository.findAll();
+    }
+
 
 }

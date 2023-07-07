@@ -7,6 +7,8 @@ import kits.edu.final_project.repository.UserRepository;
 import kits.edu.final_project.service.UserService;
 import kits.edu.final_project.service.imp.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,11 +45,18 @@ public class UserController {
         return new ResponseEntity<>(response,HttpStatus.OK);
     }
     @PutMapping("/change/{id}")
-    public ResponseEntity<?> getUserById(@RequestBody UserEntity userEntity,@PathVariable int id) {
+    public ResponseEntity<?> replaceUserById(@RequestBody UserEntity userEntity,@PathVariable("id") int id) {
         BaseResponse response = new BaseResponse();
         response.setStatusCode(200);
         response.setData(userServiceImp.replaceUserById(userEntity,id));
         return new ResponseEntity<>(response,HttpStatus.OK);
     }
+    @DeleteMapping("/remove/{id}")
 
+    public ResponseEntity<?> deleteUserById (@PathVariable("id") int id) {
+        BaseResponse response = new BaseResponse();
+        response.setStatusCode(200);
+        response.setData(userServiceImp.deleteUserById(id));
+        return new ResponseEntity<>(response,HttpStatus.OK);
+    }
 }
