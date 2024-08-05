@@ -1,0 +1,4 @@
+MaSach=1 TenSach=doraemon TacGia=fujiko Nxb=shougakukan NamXB=1970 TheLoai=comedy Gia=15000 SoLuong=10 
+MaSach=2 TenSach=sailor moon TacGia=takahashi rumiko Nxb=shueisha NamXB=2000 TheLoai=shoujo Gia=10000 SoLuong=30 
+MaSach=3 TenSach=Naruto TacGia=Kishimoto Nxb=Jump NamXB=2010 TheLoai=Adventure Gia=18000 SoLuong=70 
+MaSach=4 TenSach=SpyxFamily TacGia=Endo Tatsuya Nxb=Shougakukan NamXB=2022 TheLoai=Action Gia=28000 SoLuong=8 

@@ -1,0 +1,4 @@
+Id=1 ten=khoa cmnd=123 ngaysinh=21 thangsinh=3 namsinh=1997 gioitinh=Nam email=khoa@dxc.com diachi=hcm ngaylap=18 thanglap=5 namlap=2024 ngayhh=18 thanghh=5 namhh=2026
+Id=2 ten=nghi cmnd=456 ngaysinh=3 thangsinh=11 namsinh=1990 gioitinh=Nu email=nghi@dentsu.com diachi=hai duong ngaylap=16 thanglap=4 namlap=2024 ngayhh=16 thanghh=4 namhh=2026
+Id=3 ten=nguyen van thanh cmnd=789 ngaysinh=20 thangsinh=7 namsinh=1959 gioitinh=Nam email=thanhtx@gmail.com diachi=ha noi ngaylap=18 thanglap=5 namlap=2024 ngayhh=18 thanghh=5 namhh=2026
+Id=4 ten=Tran Thi Thanh cmnd=159 ngaysinh=3 thangsinh=3 namsinh=1962 gioitinh=Nu email=thanh@yahoo.com diachi=hoc mon ngaylap=30 thanglap=4 namlap=2024 ngayhh=30 thanghh=4 namhh=2026
